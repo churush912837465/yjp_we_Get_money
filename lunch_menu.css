@@ -1,0 +1,41 @@
+body{
+    width: 500px; 
+    margin: 0px auto;
+    overflow: scroll;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title{
+    text-align: center;
+    font-size: 35px;
+}
+
+#menu_mid{
+    width: 500px;
+    height: 100%;
+}
+
+#btns{
+    width: auto;
+    height: auto;
+}
+
+.btn_{
+    float: left;
+}
+.food_map{
+    width: 200px;
+    height: 200px;
+    font-size: x-large;
+}
+#see_food{
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}

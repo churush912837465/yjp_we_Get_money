@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>돈을벌조 - 메뉴추천</title>
+
+        <link rel="stylesheet" href="MBTI_simple.css" type="text/css">
+        <script type="text/javascript" src="MBTI_simple.js"></script>
+    </head>
+    <body>
+        <div id = main>
+            <div id="TEST_NAME"><h3>MBTI 간단검사</h1></div>
+
+
+            <div id ="TEST_IMG">
+                <img src="./img/초간단mbti.jpg" alt="mbti" width="500" height="300">
+            </div>
+
+            <div id="name_input">
+                <form>
+                    <input type="text" placeholder="이름 입력" id="ninput">
+                </form>
+            </div>
+            
+            <div id="box">
+                <h1>5초컷 초간단 MBTI 검사</h1>
+
+                <h2>문제가 생겼을 때 당신의 대처법은?</h2>
+                
+                <br>
+
+                <div id = "MBTI_1">
+                    <input type='checkbox'name='mbti1' value='E'onclick='checkOnlyOne(this,this.name)'/> 말이 많아짐   vs   생각이 많아짐
+                    <input type='checkbox'name='mbti1' value='I'onclick='checkOnlyOne(this,this.name)'/> 
+                </div>
+
+                <div id = "MBTI_2">
+                    <input type='checkbox'name='mbti2' value='S'onclick='checkOnlyOne(this,this.name)'/> 그럴 수 있지   vs   어떻게 그럴 수 있지
+                    <input type='checkbox'name='mbti2' value='N'onclick='checkOnlyOne(this,this.name)'/> 
+                </div>
+
+                <div id = "MBTI_3">
+                    <input type='checkbox'name='mbti3' value='F'onclick='checkOnlyOne(this,this.name)'/> 선 공감 후 이해   vs   이해가 돼야 공감을 하든 말든
+                    <input type='checkbox'name='mbti3' value='T'onclick='checkOnlyOne(this,this.name)'/> 
+                </div>
+
+                <div id = "MBTI_4">
+                    <input type='checkbox'name='mbti4' value='J'onclick='checkOnlyOne(this,this.name)'/> (바로)처리함   vs   (조용히)처리함
+                    <input type='checkbox'name='mbti4' value='P'onclick='checkOnlyOne(this,this.name)'/> 
+                </div>
+
+                <br>
+                <br>
+                <button class="w-btn-neon2" type="button" id="nbtn" value="검사 결과 확인" onclick="getName()">
+                    검사결과확인
+                </button>
+
+                <br>
+                <br>
+
+                <h3 id="getName"></h3>
+                <h3 id="getMBTI"></h3>
+            </div>
+        </div>
+    </body>
+</html>

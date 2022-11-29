@@ -1,0 +1,45 @@
+
+
+body{
+    width: 500px; 
+    margin: 0px auto;
+    overflow: scroll;
+
+}
+
+li{list-style: none;}
+a{text-decoration: none;}
+
+
+
+#magnifying_glass{
+    float : right;
+}
+
+/* #middle_category{
+    float:left 
+
+} */
+#middle_category1{
+    overflow: hidden;
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    height: 180px;
+
+}
+
+#middle_category2{
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    height: 180px;
+
+}
+
+#middle_category3{
+    display: inline-block;
+    width: 150px;
+    height: 180px;
+
+}

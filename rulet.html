@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돈을벌조</title>
+
+    <link rel="stylesheet" href="index_main_Css.css" type="text/css">
+    <link rel="stylesheet" href="rulet.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="rulet.js"></script>
+    <style>
+        *{
+            box-shadow: border-bo;
+        }
+
+            @font-face {
+        font-family: 'establishRetrosansOTF';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body{
+        width: 500px; 
+        margin: 0px auto;
+        overflow: scroll;
+        font-family: 'establishRetrosansOTF';
+    }
+
+        #app {
+            text-align: center;
+        }
+
+        .main_name{
+            font-size: 75px;
+        }
+
+        .roulette-outer {
+            position: relative;
+            overflow: hidden;
+
+            width: 500px;
+            height: 500px;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+            border-radius: 50%;
+            
+        }
+        .roulette-outer > .roulette {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            right: 5%;
+            bottom: 5%;
+
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        .roulette-outer > .roulette-pin {
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            
+            
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 30px 5px 0 5px;
+            border-color: #ff0037 transparent transparent transparent;
+
+            margin-left: -5px;
+        }
+        .roulette-outer > .roulette > .item-wrapper > .item {
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+
+            padding-top: 10%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .roulette-outer > .roulette > .line-wrapper > .line {
+            position: absolute;
+            top:0;
+            bottom:50%;
+            left:50%;
+            width:2px;
+            margin-left: -1px;
+            background: black;
+
+            transform-origin: bottom;
+        }
+
+        .roulette-outer > .roulette {
+            transition:transform 5s ease-in-out;
+        }
+
+        .item-input {
+    width: 500px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    }
+        /* .item-input, .item-input-add, .item-input-delete {
+            font-size: 20px;
+            padding: 0.5em;
+            outline: none;
+            border: 1px solid black;
+            background: white;
+        }
+        .item-input-add{
+            color: blue;
+            border-color: blue;
+        }
+        .item-input-add:hover {
+            color: white;
+            background: blue;
+        }
+        .item-input-delete {
+            color: red;
+            border-color: red;
+        }
+        .item-input-delete:hover {
+            color: white;
+            background: red;
+        } */
+
+        .btnBlueGreen.btnPush {
+    box-shadow: 0px 5px 0px 0px #b973d2;
+    display: block;
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 0;
+    margin: 10px 20px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: rgb(54, 54, 54);
+    border-radius: 3px;
+    transition: all 0.2s ;
+    }
+        .btnPush:hover {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    }
+
+    .btnBlueGreen.btnPush:hover {
+    box-shadow: 0px 0px 0px 0px #8e7bd5;
+    }
+
+    .container {
+        padding-top: 1em;
+        margin-top: 1em;
+        border-top: 
+        solid
+        1px
+        rgb(142, 165, 105);
+    }
+
+    .btn-hover.color-11 {
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+    outline: none;
+    /* box-shadow: 0 5px 15px rgba(242, 97, 103, .4); */
+}
+.btn-hover:focus {
+    outline: none;
+}
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 3px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+}
+    .btn-12{
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    border:none;
+    box-shadow: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+    }
+    .btn-12 span {
+    background: rgb(0,172,238);
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin:0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    }
+    .btn-12 span:nth-child(1) {
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+    }
+    .btn-12 span:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+    }
+    .btn-12:hover span:nth-child(1) {
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    }
+    .btn-12:hover span:nth-child(2) {
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    }
+    
+    </style>
+<body>
+    <div id="app">
+        
+        <p class="main_name">룰 렛</p>
+        
+        <div class="roulette-outer">
+            <div class="roulette-pin"></div>
+            <div class="roulette" v-bind:style="rouletteStyle">
+                
+                <!-- 값 영역 -->
+                <div class="item-wrapper">
+                    <div class="item" v-for="(item, index) in items"
+                    v-bind:style="itemStyles[index]">{{item.value}}</div>                    
+                </div>
+                
+                <!-- 선 영역 -->
+                <div class="line-wrapper">
+                    <div class="line" v-for="(item, index) in items"
+                    v-bind:style="lineStyles[index]"></div>
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <br>
+                <button @click="addItem" class="button btnPush btnBlueGreen" 
+                style="color: #272727; font-weight: bold; font-family:'establishRetrosansOTF';">추가</button>
+                <h2>입력하세요!</h2>
+                <!-- class="item-input-add" -->
+            </div>
+            
+            <div v-for="(item, index) in items" :key="index">
+                
+                <input type="text" v-model="item.value" class="item-input" @input="item.value = $event.target.value">
+                <button @click="deleteItem(index);" class="btn-hover color-11" v-if="index >= 2">삭제</button>
+                <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <button v-on:click="play" v-bind:disabled="buttonDisabled" class="custom-btn btn-12">
+            <span style="color: #ffffff; font-weight: bold; font-family:'establishRetrosansOTF';">Click!</span><span style="color: #ffffff; font-weight: bold; font-family:'establishRetrosansOTF';">PLAY!</span>
+        </button>
+        <ul>
+            <li v-for="(h, idx) in history">{{h}}</li>
+        </ul>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    items:[
+                        
+                        
+                    ],
+                    itemStyles:[],
+                    lineStyles:[],
+                    current:0,
+                    count:0,
+                    history:[],
+                    buttonDisabled:false,
+                };
+            },
+            computed:{
+                segment(){
+                    return 360 / this.items.length;
+                },
+                offset(){
+                    return this.segment / 2;
+                },
+                angle(){
+                    //return -this.current * this.segment;//정가운데
+                    let temp = this.current * this.segment;
+                    let randomOffset = Math.floor(Math.random() * this.segment) - this.offset - 1;
+                    let cycle = this.count * 360 * 5;//5바퀴
+                    return -(temp + randomOffset + cycle);
+                },
+                rouletteStyle(){
+                    return {
+                        "transform":"rotate("+this.angle+"deg)"
+                    };
+                },
+                currentItem(){
+                    return this.items[this.current];
+                },
+            },
+            methods:{
+                play(){
+                    this.buttonDisabled = true;
+                    this.count++;
+                    this.current = Math.floor(Math.random() * this.items.length);
+                    this.history.push(this.currentItem.value);
+
+                    setTimeout(()=>{
+                        this.buttonDisabled = false;
+                    }, 5000);
+                },
+                addItem(){
+                    this.items.push({value:""});
+                },
+                deleteItem(index){
+                    this.items.splice(index,1);
+                },
+                refreshStyle(){
+                    const itemStyles = [];
+                    const lineStyles = [];
+                    this.items.forEach((el, idx)=>{
+                        //itemStyles 정의
+                        itemStyles.push({
+                            "transform":"rotate(" + (this.segment * idx) +"deg)",
+                        });
+                        //lineStyles 정의
+                        lineStyles.push({
+                            "transform":"rotate("+ (this.segment * idx + this.offset) +"deg)",
+                        });
+                    });
+                    this.itemStyles = itemStyles;
+                    this.lineStyles = lineStyles;
+                },
+            },
+            watch:{
+                items:{
+                    deep:true,
+                    handler(){
+                        this.refreshStyle();
+                    },
+                },
+            },
+            created(){
+                this.refreshStyle();
+            },
+        }).mount("#app");
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>돈을벌조 - 메뉴추천</title>
+
+        <link rel="stylesheet" href="lunch_menu.css" type="text/css">
+        <script type="text/javascript" src="lunch_menu.js"></script>
+    </head>
+
+    <body>
+
+        <header>    
+            <div id = "menu_top">
+                <h3 class="title">점심메뉴 추천</h3>
+            </div>
+        </header>
+
+        <div id = "menu_mid">
+            
+            <div id="btns">
+                <div class = btn_>
+                    <button type="button" onclick="KogetFood()">
+                    <img src="./img/한식점심.PNG" alt="한식" width="200" height="200"></button>
+                </div>
+            
+                <div class = btn_>
+                    <button class="lunch_btn" onclick="ChgetFood()">
+                    <img src="./img/중식점심.PNG" alt="중식" width="200" height="200"></button>
+                </div>
+            
+                <div class = btn_>
+                    <button class="lunch_btn" onclick="JpgetFood()" >
+                    <img src="./img/일식점심.PNG" alt="일식" width="200" height="200"></button>
+                </div>
+            
+                <div class = btn_>
+                    <button class="lunch_btn" onclick="UsgetFood()" >
+                    <img src="./img/양식점심.PNG" alt="양식" width="200" height="200"></button>
+                </div>
+            
+                <div class = btn_>
+                    <button class="lunch_btn" onclick="RandomgetFood()" >
+                    <img src="./img/랜덤점심.PNG" alt="랜덤" width="200" height="200"></button>
+            
+                </div>
+            </div>
+            <div>
+                <button class="food_map" onclick="search_food()" style="font-family: 'GangwonEdu_OTFBoldA';">음식점 지도로 검색</button>
+            </div>
+            <p id="see_food" style="font-family: 'GangwonEdu_OTFBoldA';"> 버튼을 클릭해주세요</p>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돈을벌조</title>
+    <script language = "javascript">
+        var imgArray = new Array();
+        imgArray[0] = "./img/슬라이드1.PNG"
+        imgArray[1] = "./img/슬라이드2.PNG"
+        imgArray[3] = "./img/슬라이드4.PNG"
+        imgArray[4] = "./img/슬라이드5.PNG"
+        imgArray[5] = "./img/슬라이드6.PNG"
+        imgArray[6] = "./img/슬라이드7.PNG"
+        
+        function showImage(){
+            var imgNum = Math.round(Math.random()*5);
+            var objImg = document.getElementById("introImg");
+            objImg.src = imgArray[imgNum];
+        }
+    </script>
+
+    <link rel="stylesheet" href="index_main_Css.css" type="text/css">
+
+</head>
+<body onload = "showImage()">
+    <header>    
+        <div id = "main_top">
+            
+            <a href="./index.html" target="_blank"><img src="./img/main_title.png" width=150px height=50px></a>
+            <a href="./BigLogoSearch.html" target="_blank"><img id = "magnifying_glass" src="./img/search.png" width=50px height=50px ></a>
+        </div>
+
+        <hr>
+    </header>
+
+    <div id="main-center">
+        <img id = "introImg" width=500px height=400px>
+    </div>
+
+    <div id="main-center">
+        <a href="./lunch_menu.html" ><img src="./img/오늘점심뭐먹지.jpg" width=500px, height=150px ></a>
+    </div>
+
+    <div id="middle_category">
+        <h3>전체 카테고리</h3>    
+        <div id = "middle_category1"><a href = './mbti/mbti1.html'><img src="./img/메인MBTI.PNG" width= 150px height= 180px;></a></div>
+        <div id = "middle_category2"><a href="./lunch_menu.html" ><img src="./img/점심메뉴.PNG" width= 150px height= 180px;></a></div>
+        <div id = "middle_category3"><a href='rulet.html'><img src="./img/룰렛.PNG" width= 150px height= 180px;></a></div>
+
+    </div>
+
+
+
+
+    <div></div>
+</body>
+</html>
